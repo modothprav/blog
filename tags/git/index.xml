@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Pravin&#39;s Blog</title>
+    <link>https://modothprav.github.io/blog/tags/git/</link>
+    <description>Recent content in git on Pravin&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>pravinmanoj44@gmail.com (Pravin Modotholi)</managingEditor>
+    <webMaster>pravinmanoj44@gmail.com (Pravin Modotholi)</webMaster>
+    <copyright>2022 Pravin Modotholi All rights reserved</copyright>
+    <lastBuildDate>Sat, 26 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://modothprav.github.io/blog/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Move files among different repos and Retain Git History</title>
+      <link>https://modothprav.github.io/blog/2022/02/26/how-to-move-files-among-different-repos-and-retain-git-history/</link>
+      <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
+      <author>pravinmanoj44@gmail.com (Pravin Modotholi)</author>
+      <guid>https://modothprav.github.io/blog/2022/02/26/how-to-move-files-among-different-repos-and-retain-git-history/</guid>
+      <description>When working in a multi-repository or large mono-repo project eventually developers will have to refactor out some files and folders across from one project to another.
+As developers reach a point where they have to start splitting up the large repository into smaller sub-repos, preserving the commit history during this migration process can be very handy for future bugs and adjustments.
+As you may have already noticed, when simply trying to move files from one repo to another we lose any history correlated to that file and are unable to trace back any changes.</description>
+    </item>
+    
+  </channel>
+</rss>

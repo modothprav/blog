@@ -1,0 +1,21 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "Pravin's Blog",
+  "home_page_url": "https://modothprav.github.io/blog/",
+  "feed_url": "https://modothprav.github.io/blog/",
+
+
+  "items": [
+  
+  
+    {
+      "id": "https://modothprav.github.io/blog/2022/02/26/how-to-move-files-among-different-repos-and-retain-git-history/",
+      "title": "How to Move files among different repos and Retain Git History",
+      "content_text": "When working in a multi-repository or large mono-repo project eventually developers will have to refactor out some files and folders across from one project to another.\nAs developers reach a point where they have to start splitting up the large repository into smaller sub-repos, preserving the commit history during this migration process can be very handy for future bugs and adjustments.\nAs you may have already noticed, when simply trying to move files from one repo to another we lose any history correlated to that file and are unable to trace back any changes.",
+      "url": "https://modothprav.github.io/blog/2022/02/26/how-to-move-files-among-different-repos-and-retain-git-history/",
+      "date_published": "2022-02-26 00:00:00 +0000 UTC",
+      "tags": ["git,programming"]
+    }
+  
+  ]
+}
