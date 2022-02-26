@@ -1,4 +1,4 @@
-baseURL = "https://modothprav.github.io/blog/"
+baseURL = "http://pravinmodotholi.me/blog/"
 languageCode = "en-us"
 title = "Pravin's Blog"
 rssLimit = 20
