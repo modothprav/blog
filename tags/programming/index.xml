@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>programming on Pravin&#39;s Blog</title>
-    <link>http://pravinmodotholi.me/blog/tags/programming/</link>
+    <link>https://pravinmodotholi.me/tags/programming/</link>
     <description>Recent content in programming on Pravin&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>pravinmanoj44@gmail.com (Pravin Modotholi)</managingEditor>
     <webMaster>pravinmanoj44@gmail.com (Pravin Modotholi)</webMaster>
     <copyright>2022 Pravin Modotholi All rights reserved</copyright>
-    <lastBuildDate>Sat, 26 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://pravinmodotholi.me/blog/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://pravinmodotholi.me/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Move files among different repos and Retain Git History</title>
-      <link>http://pravinmodotholi.me/blog/2022/02/26/how-to-move-files-among-different-repos-and-retain-git-history/</link>
+      <link>https://pravinmodotholi.me/2022/02/26/how-to-move-files-among-different-repos-and-retain-git-history/</link>
       <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
       <author>pravinmanoj44@gmail.com (Pravin Modotholi)</author>
-      <guid>http://pravinmodotholi.me/blog/2022/02/26/how-to-move-files-among-different-repos-and-retain-git-history/</guid>
+      <guid>https://pravinmodotholi.me/2022/02/26/how-to-move-files-among-different-repos-and-retain-git-history/</guid>
       <description>When working in a multi-repository or large mono-repo project eventually developers will have to refactor out some files and folders across from one project to another.
 As developers reach a point where they have to start splitting up the large repository into smaller sub-repos, preserving the commit history during this migration process can be very handy for future bugs and adjustments.
 As you may have already noticed, when simply trying to move files from one repo to another we lose any history correlated to that file and are unable to trace back any changes.</description>
