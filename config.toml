@@ -1,0 +1,21 @@
+baseURL = "https://modothprav.github.io/blog/"
+languageCode = "en-us"
+title = "Pravin's Blog"
+rssLimit = 20
+copyright = "2022 Pravin Modotholi All rights reserved"
+minify = false
+
+[Author]
+  name = "Pravin Modotholi"
+  email = "pravinmanoj44@gmail.com"
+
+[permalinks]
+  posts = "/:year/:month/:day/:filename"
+  pages = "/:slug"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[outputs]
+  home = ["html", "json", "rss"]
