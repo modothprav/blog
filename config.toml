@@ -1,4 +1,4 @@
-baseURL = "http://pravinmodotholi.me/blog/"
+baseURL = "https://pravinmodotholi.me/"
 languageCode = "en-us"
 title = "Pravin's Blog"
 rssLimit = 20
