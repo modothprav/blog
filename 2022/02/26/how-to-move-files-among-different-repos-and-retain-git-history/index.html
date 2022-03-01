@@ -33,7 +33,7 @@
             
           </div>
         </div>
-        <div class="content"><p>When working in a multi-repository or large mono-repo project eventually developers will have to refactor out some files and folders across from one project to another.</p>
+        <div class="content"><p>When working in a multi-repository or large mono-repo project, eventually developers will have to refactor out some files and folders across from one project to another.</p>
 <p>As developers reach a point where they have to start splitting up the large repository into smaller sub-repos, preserving the commit history during this migration process can be very handy for future bugs and adjustments.</p>
 <p>As you may have already noticed, when simply trying to move files from one repo to another we lose any history correlated to that file and are unable to trace back any changes.</p>
 <p>The following steps outlined below will demonstrate how to achieve history retention during file migration.</p>
@@ -44,86 +44,86 @@
 <h2 id="installation">Installation</h2>
 <p>A more detailed set of instructions can be found in the tool’s <a href="https://github.com/newren/git-filter-repo.git">GitHub</a> repo</p>
 <h3 id="step-1">Step 1</h3>
-<p>Clone the toll from <a href="https://github.com/newren/git-filter-repo.git">GitHub</a> or download the files manually.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/newren/git-filter-repo.git
-</code></pre></div><h3 id="step-2-optional">Step 2 (Optional)</h3>
+<p>Clone the tool from <a href="https://github.com/newren/git-filter-repo.git">GitHub</a> or download the files manually.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/newren/git-filter-repo.git
+</span></span></code></pre></div><h3 id="step-2-optional">Step 2 (Optional)</h3>
 <p>Edit the first line of the file called <code>git-filter-repo</code> and replace <code>python3</code> with <code>python</code> depending on your Python installation you may skip this step.</p>
 <blockquote>
 <p><strong>Note:</strong> Come back to this step if the setup was unsuccessful.</p>
 </blockquote>
 <h3 id="step-3">Step 3</h3>
 <p>Next type in the command <code>git --exec-path</code> and paste the file <code>git-filter-repo</code> into the outputted location. In this case the outputted location being <code>/usr/local/libexec/git-core</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git --exec-path
-&gt; /usr/local/libexec/git-core
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp git-filter-repo /usr/local/libexec/git-core/git-filter-repo
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git --exec-path
+</span></span><span style="display:flex;"><span>&gt; /usr/local/libexec/git-core
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cp git-filter-repo /usr/local/libexec/git-core/git-filter-repo
+</span></span></code></pre></div><blockquote>
 <p><strong>Note:</strong> Ensure the file permissions on <code>git-filter-repo</code> are the same as all the other executables under the <code>git-core</code> folder.</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo chmod <span style="color:#ae81ff">755</span> /usr/local/libexec/git-core/git-filter-repo
-</code></pre></div><h3 id="step-4">Step 4</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo chmod <span style="color:#ae81ff">755</span> /usr/local/libexec/git-core/git-filter-repo
+</span></span></code></pre></div><h3 id="step-4">Step 4</h3>
 <p>Check if the installation was successful, the following output should be observed</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git-filter-repo
-No arguments specified.
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git-filter-repo
+</span></span><span style="display:flex;"><span>No arguments specified.
+</span></span></code></pre></div><blockquote>
 <p><strong>Note:</strong> The <code>--help</code> option will not work but there is <a href="https://htmlpreview.github.io/?https://github.com/newren/git-filter-repo/blob/docs/html/git-filter-repo.html">documentation</a> available online.</p>
 </blockquote>
 <h1 id="moving-files-while-preserving-git-history">Moving Files while preserving Git History</h1>
 <p><img src="https://images.unsplash.com/photo-1447069387593-a5de0862481e?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1469&amp;q=80" alt="Cover2"></p>
 <h3 id="step-1-1">Step 1</h3>
 <p>Clone or download the source repository from which the files are being filtered and extracted e.g.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone &lt;Original repo URL&gt;
-</code></pre></div><h3 id="step-2">Step 2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone &lt;Original repo URL&gt;
+</span></span></code></pre></div><h3 id="step-2">Step 2</h3>
 <p>Next, create <em>another</em> directory and initialise it as a Git repository with no commits.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir filtered-repo
-cd filtered-repo
-git init
-</code></pre></div><h3 id="step-3-1">Step 3</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir filtered-repo
+</span></span><span style="display:flex;"><span>cd filtered-repo
+</span></span><span style="display:flex;"><span>git init
+</span></span></code></pre></div><h3 id="step-3-1">Step 3</h3>
 <p>Perform the filtering on the repo that was initially cloned and save the changes in the newly initialised Git repo. This is done by setting the <code>--source</code> and <code>--target</code> repo options when using <code>git filter-repo</code> e.g.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">--source &lt;Original repo path&gt; --target filtered-repo/
-</code></pre></div><p>There are a number of filtering options that can be found in the <a href="https://htmlpreview.github.io/?https://github.com/newren/git-filter-repo/blob/docs/html/git-filter-repo.html">documentation</a>, the most common being <code>--path</code> and <code>--path-rename</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--source &lt;Original repo path&gt; --target filtered-repo/
+</span></span></code></pre></div><p>There are a number of filtering options that can be found in the <a href="https://htmlpreview.github.io/?https://github.com/newren/git-filter-repo/blob/docs/html/git-filter-repo.html">documentation</a>, the most common being <code>--path</code> and <code>--path-rename</code></p>
 <blockquote>
-<p><strong>Note:</strong> Much like git itself renames are not followed through. Hence let&rsquo;s say during development a file was renamed from <code>index.js</code> to <code>server.js</code> and the filter command only specified the path for <code>server.js</code>, the tool will now only filter out the commit history up until the point it was renamed.</p>
+<p><strong>Note:</strong> Much like git itself renames are not followed through. Hence let&rsquo;s say during development a file was renamed from <code>index.js</code> to <code>server.js</code> and the filter command only specified the path for <code>server.js</code>, the tool will only filter out the commit history up until the point it was renamed.</p>
 </blockquote>
 <p>Therefore all file history prior to the rename when <code>server.js</code> was called <code>index.js</code> will <em><strong>not</strong></em> be preserved.</p>
 <p>To get around this issue multiple paths will need to be specified in the filter command using the <code>--path</code> option.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">--path olddir/ --path newdir/
-</code></pre></div><p>In this case, to apply the command for the situation described above would be as shown below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git filter-repo --path server.js --path index.js
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--path olddir/ --path newdir/
+</span></span></code></pre></div><p>In this case, to apply the command for the situation described above would be as shown below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git filter-repo --path server.js --path index.js
+</span></span></code></pre></div><blockquote>
 <p><strong>Note:</strong> The <code>--path-rename</code> option is also very useful as it helps contain all the files within a resultant sub-directory of your filtered repo, which makes pulling commits from the filtered repo to the new project to be much smoother.</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">--path-rename &lt;old path&gt;:&lt;new path&gt;
-</code></pre></div><h4 id="examples">Examples</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--path-rename &lt;old path&gt;:&lt;new path&gt;
+</span></span></code></pre></div><h4 id="examples">Examples</h4>
 <p>Below are some examples of what the final filtering command may look like. More can be found in the <a href="https://htmlpreview.github.io/?https://github.com/newren/git-filter-repo/blob/docs/html/git-filter-repo.html">user manual</a>.</p>
 <p>This command ensures that commits and files relating only to the <code>lib-encrypt</code> directory will be filtered into the target repo (filtered-repo).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git filter-repo --source &lt;Original&gt;  --target filtered-repo
-    --path libs/lib-encrypt
-    --path-rename libs/lib-encrypt:lib-encrypt
-    --preserve-commit-hashes
-</code></pre></div><p>However the command above will not retain any commit history prior to any renames, hence multiple paths will need to be specified as shown below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git filter-repo --source &lt;Original&gt;  --target filtered-repo
-    --path libs/lib-encrypt 
-    --path libs/lib-base64 
-    --path-rename libs/lib-encrypt:lib-encrypt
-    --path-rename libs/lib-base64:lib-encrypt
-    --preserve-commit-hashes
-</code></pre></div><p>As can be seen from the command above <code>lib-encrypt</code> used to be named <code>lib-base64</code> hence in order to retain all history prior to this rename multiple paths have been specified.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git filter-repo --source &lt;Original&gt;  --target filtered-repo
+</span></span><span style="display:flex;"><span>    --path libs/lib-encrypt
+</span></span><span style="display:flex;"><span>    --path-rename libs/lib-encrypt:lib-encrypt
+</span></span><span style="display:flex;"><span>    --preserve-commit-hashes
+</span></span></code></pre></div><p>However the command above will not retain any commit history prior to any renames, hence multiple paths will need to be specified as shown below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git filter-repo --source &lt;Original&gt;  --target filtered-repo
+</span></span><span style="display:flex;"><span>    --path libs/lib-encrypt 
+</span></span><span style="display:flex;"><span>    --path libs/lib-base64 
+</span></span><span style="display:flex;"><span>    --path-rename libs/lib-encrypt:lib-encrypt
+</span></span><span style="display:flex;"><span>    --path-rename libs/lib-base64:lib-encrypt
+</span></span><span style="display:flex;"><span>    --preserve-commit-hashes
+</span></span></code></pre></div><p>As can be seen from the command above <code>lib-encrypt</code> used to be named <code>lib-base64</code> hence in order to retain all history prior to this rename multiple paths have been specified.</p>
 <p>With the command above the outcome can be observed in the target repo (filtered-repo) where all the filtered files will be saved in the following structure <code>&lt;project root&gt;/lib-encrypt/*</code> as specified by the<code>--path-rename</code> option.</p>
 <blockquote>
-<p><strong>Note:</strong> When specifying multiple <code>paths</code> to filter the same number of <code>renames</code> should be specified to bring all filtered files into one subdirectory.</p>
+<p><strong>Note:</strong> When specifying multiple <code>paths</code> to filter, the same number of <code>renames</code> should be specified to bring all filtered files into one subdirectory.</p>
 </blockquote>
 <h3 id="step-4-1">Step 4</h3>
 <p>Once all the filtered files have been saved in the target repo (filtered-repo) within a sub-directory (e.g. lib-encrypt), navigate to a cloned location of your new project where you want to migrate the files to.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone &lt;New Project URL&gt;
-cd &lt;new project&gt;
-</code></pre></div><p>Once present add another remote repository and set the local location of <code>filtered-repo</code> as the remote repo location.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add modified-source ../filtered-repo
-</code></pre></div><p>Once added pull commits from this repo. This will merge the commits from the <code>filtered-repo</code> into your new project.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git pull modified-source master --allow-unrelated-histories
-</code></pre></div><p>Finally, make any necessary final changes and push to origin.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote rm modified-source
-git push origin -u -all
-</code></pre></div></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone &lt;New Project URL&gt;
+</span></span><span style="display:flex;"><span>cd &lt;new project&gt;
+</span></span></code></pre></div><p>Once present add another remote repository and set the local location of <code>filtered-repo</code> as the remote repo location.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote add modified-source ../filtered-repo
+</span></span></code></pre></div><p>Once added pull commits from this repo. This will merge the commits from the <code>filtered-repo</code> into your new project.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git pull modified-source master --allow-unrelated-histories
+</span></span></code></pre></div><p>Finally, make any necessary final changes and push to origin.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote rm modified-source
+</span></span><span style="display:flex;"><span>git push origin -u -all
+</span></span></code></pre></div></div>
       </section>
       <footer>
   <p>&copy; 2022 </p>
