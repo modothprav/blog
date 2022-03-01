@@ -4,7 +4,7 @@ date: 2022-02-26
 tags: ["git", "programming"]
 ---
 
-When working in a multi-repository or large mono-repo project eventually developers will have to refactor out some files and folders across from one project to another.
+When working in a multi-repository or large mono-repo project, eventually developers will have to refactor out some files and folders across from one project to another.
 
 As developers reach a point where they have to start splitting up the large repository into smaller sub-repos, preserving the commit history during this migration process can be very handy for future bugs and adjustments. 
 
@@ -26,7 +26,7 @@ A more detailed set of instructions can be found in the tool’s [GitHub](https:
 
 ### Step 1
 
-Clone the toll from [GitHub](https://github.com/newren/git-filter-repo.git) or download the files manually.
+Clone the tool from [GitHub](https://github.com/newren/git-filter-repo.git) or download the files manually.
 
 ```bash
 git clone https://github.com/newren/git-filter-repo.git
@@ -103,7 +103,7 @@ Perform the filtering on the repo that was initially cloned and save the changes
 
 There are a number of filtering options that can be found in the [documentation](https://htmlpreview.github.io/?https://github.com/newren/git-filter-repo/blob/docs/html/git-filter-repo.html), the most common being `--path` and `--path-rename`
 
-> **Note:** Much like git itself renames are not followed through. Hence let's say during development a file was renamed from `index.js` to `server.js` and the filter command only specified the path for `server.js`, the tool will now only filter out the commit history up until the point it was renamed.
+> **Note:** Much like git itself renames are not followed through. Hence let's say during development a file was renamed from `index.js` to `server.js` and the filter command only specified the path for `server.js`, the tool will only filter out the commit history up until the point it was renamed.
 > 
 
 Therefore all file history prior to the rename when `server.js` was called `index.js` will ***not*** be preserved.
@@ -155,7 +155,7 @@ As can be seen from the command above `lib-encrypt` used to be named `lib-base64
 
 With the command above the outcome can be observed in the target repo (filtered-repo) where all the filtered files will be saved in the following structure `<project root>/lib-encrypt/*` as specified by the`--path-rename` option.
 
-> **Note:** When specifying multiple `paths` to filter the same number of `renames` should be specified to bring all filtered files into one subdirectory.
+> **Note:** When specifying multiple `paths` to filter, the same number of `renames` should be specified to bring all filtered files into one subdirectory.
 > 
 
 ### Step 4
