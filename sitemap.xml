@@ -2,22 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.pravinmodotholi.me/tags/finance/</loc>
+    <lastmod>2022-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pravinmodotholi.me/tags/nz/</loc>
+    <lastmod>2022-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pravinmodotholi.me/2022/03/07/optimising-interest-earned-on-savings-for-tertiary-students/</loc>
+    <lastmod>2022-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pravinmodotholi.me/posts/</loc>
+    <lastmod>2022-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pravinmodotholi.me/</loc>
+    <lastmod>2022-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pravinmodotholi.me/tags/students/</loc>
+    <lastmod>2022-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pravinmodotholi.me/tags/</loc>
+    <lastmod>2022-03-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.pravinmodotholi.me/tags/git/</loc>
     <lastmod>2022-02-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.pravinmodotholi.me/2022/02/26/how-to-move-files-among-different-repos-and-retain-git-history/</loc>
     <lastmod>2022-02-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.pravinmodotholi.me/posts/</loc>
-    <lastmod>2022-02-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.pravinmodotholi.me/</loc>
-    <lastmod>2022-02-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://blog.pravinmodotholi.me/tags/programming/</loc>
-    <lastmod>2022-02-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.pravinmodotholi.me/tags/</loc>
     <lastmod>2022-02-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.pravinmodotholi.me/categories/</loc>
