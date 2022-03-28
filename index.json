@@ -9,6 +9,16 @@
   
   
     {
+      "id": "https://blog.pravinmodotholi.me/2022/03/28/page-object-model-with-selenium/",
+      "title": "Page Object Model with Selenium",
+      "content_text": "The Page Object Model is a design pattern that is encouraged to be used during automation testing with Selenium. This design pattern creates an object repository of the web elements present on a web page. A Page object is represented as an Object-oriented class, which can contain methods that allow tests and other automation workflows to interact with the user interface of the web page.\nAdvantages One main benefit of using this design pattern is the ease of maintenance and flexibility for future changes.",
+      "url": "https://blog.pravinmodotholi.me/2022/03/28/page-object-model-with-selenium/",
+      "date_published": "2022-03-28 00:00:00 +0000 UTC",
+      "tags": ["programming,selenium,java"]
+    }
+  
+  , 
+    {
       "id": "https://blog.pravinmodotholi.me/2022/03/07/optimising-interest-earned-on-savings-for-tertiary-students/",
       "title": "Optimising Interest Earned on Savings for Tertiary Students",
       "content_text": "Being a Tertiary student in New Zealand can happen to be more expensive than it should be. While studying unable to work full time can have you living pay-check to pay-check as time goes by.\nHowever, there are a lot of resources, benefits and perks out there for tertiary students that can be taken advantage of while you are studying. From those available perks, this post will be discussing student bank accounts, and how you can use them to earn the best interest rate available on your savings.",

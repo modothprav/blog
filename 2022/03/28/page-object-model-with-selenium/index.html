@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Object Model with Selenium | Pravin&#39;s Blog</title>
+  <link rel="stylesheet" href="https://blog.pravinmodotholi.me/assets/css/post.css" />
+  <script defer src="https://blog.pravinmodotholi.me/assets/js/lbox.js"></script>
+  
+  <link rel="stylesheet" href="https://blog.pravinmodotholi.me/assets/css/common.css" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://blog.pravinmodotholi.me/assets/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://blog.pravinmodotholi.me/assets/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://blog.pravinmodotholi.me/assets/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="https://blog.pravinmodotholi.me/assets/favicon_io/site.webmanifest">
+</head>
+  <body>
+    <main>
+      <header>
+  <a class="site-title" href="https://blog.pravinmodotholi.me/">Pravin&#39;s Blog</a>
+</header>
+
+      <section class="article">
+        <div class="article-header">
+          <h2 class="article-title">Page Object Model with Selenium</h2>
+          <small class="date">Mon Mar 28, 2022</small>
+          <div class="tags">
+            
+            <a href="https://blog.pravinmodotholi.me/tags/programming" class="tag">programming</a>
+            
+            <a href="https://blog.pravinmodotholi.me/tags/selenium" class="tag">selenium</a>
+            
+            <a href="https://blog.pravinmodotholi.me/tags/java" class="tag">java</a>
+            
+          </div>
+        </div>
+        <div class="content"><p>The Page Object Model is a <em>design pattern</em> that is encouraged to be used during automation testing with <a href="https://www.selenium.dev/documentation/">Selenium</a>. This design pattern creates an object repository of the web elements present on a web page.  A Page object is represented as an Object-oriented class, which can contain methods that allow tests and other automation workflows to interact with the user interface of the web page.</p>
+<p><img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" alt="Cover"></p>
+<h2 id="advantages">Advantages</h2>
+<p>One main benefit of using this design pattern is the ease of maintenance and flexibility for future changes. If the user interface of the web page you are automating/testing were to change, you’d know exactly where to look in your codebase as each page object will have its own file. From there it’s usually as simple as changing the way an element is located or modifying a particular method within the class.</p>
+<p>This separation between page-specific code and test code means that again if the UI were to change, the test code wouldn’t need to be modified, as all modifications in response to that UI change can be made in the page object class file.</p>
+<p>Another benefit is the code reusability since each page object is independent of each other, the same methods can be reused in different tests and automation workflows. This reduces unnecessary lines of code and gives more emphasis to behaviour compared to locating and scraping web elements.</p>
+<p>Finally, this design pattern greatly improves readability for a developer, since each webpage will have its own page object file, browsing the code base will be fairly simple if organised accordingly. The developer will know exactly what actions are going to be performed on each webpage as outlined in the page object files. Again due to each page being independent of each other, the developer can confidently make any modifications to a single page object class file, without affecting other class files.</p>
+<h2 id="example-test-without-pom-pattern">Example Test <em>without</em> POM pattern</h2>
+<p>Now here’s an example of a test function that test’s the login process within the Yahoo login page. This test method doesn’t utilise the Page Object class we have defined in a later example. The function enters the username and clicks next to then be prompted to enter the password.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  * Tests login feature
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Login</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testLogin</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Enter Username and click next
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      driver<span style="color:#f92672">.</span><span style="color:#a6e22e">findElement</span><span style="color:#f92672">(</span>By<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;login-username&#34;</span><span style="color:#f92672">)).</span><span style="color:#a6e22e">sendKeys</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Pravin&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>      driver<span style="color:#f92672">.</span><span style="color:#a6e22e">findElement</span><span style="color:#f92672">(</span>By<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sign-in&#34;</span><span style="color:#f92672">)).</span><span style="color:#a6e22e">click</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Enter password and click next
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      driver<span style="color:#f92672">.</span><span style="color:#a6e22e">findElement</span><span style="color:#f92672">(</span>By<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;login-passwd&#34;</span><span style="color:#f92672">)).</span><span style="color:#a6e22e">sendKeys</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>      driver<span style="color:#f92672">.</span><span style="color:#a6e22e">findElement</span><span style="color:#f92672">(</span>By<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;login-signin&#34;</span><span style="color:#f92672">)).</span><span style="color:#a6e22e">click</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Verify and check if homepage is authenticated for current user
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      By elementPath <span style="color:#f92672">=</span> By<span style="color:#f92672">.</span><span style="color:#a6e22e">xpath</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;//div[text()=&#39;Pravin&#39;]&#34;</span>
+</span></span><span style="display:flex;"><span>      assertTrue<span style="color:#f92672">(</span>driver<span style="color:#f92672">.</span><span style="color:#a6e22e">findElement</span><span style="color:#f92672">(</span>elementPath<span style="color:#f92672">)).</span><span style="color:#a6e22e">isDisplayed</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span></code></pre></div><blockquote>
+<p>Now imagine if multiple test cases followed this same structure above, it would be a real hassle to modify all of these test cases if the user interface of the web page were to change.</p>
+</blockquote>
+<h2 id="what-is-page-factory">What is Page factory?</h2>
+<p>Page factory is another class provided by Selenium, to enable support for the Page Object Model design pattern. The Page factory class helps with <em>instantiating</em> the web elements or fields in a Page Object class file.</p>
+<p>This class provides the developer with the <code>@FindBy</code> annotation and the static <code>initElements()</code> method, to instantiate the Web element of a page upon object construction. This can be seen more clearly with an example file below, which is a page object class of the Yahoo login Web page.</p>
+<p>The <code>initElements()</code> method will locate all the web elements defined as fields in the class file, using the locators specified in the <code>@FindBy</code> annotation.</p>
+<blockquote>
+<p><strong>Note:</strong> For a more thorough explanation of Page factory check out these docs on <a href="https://github.com/SeleniumHQ/selenium/wiki/PageFactory">GitHub</a></p>
+</blockquote>
+<h2 id="example-class-file-with-pom-pattern-in-use---yahoo-login-page">Example Class file with POM pattern in use - Yahoo Login page</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">YahooLogin</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> WebDriver driver<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Object Repository
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@FindBy</span><span style="color:#f92672">(</span>id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;login-username&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> WebElement usernameField<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@FindBy</span><span style="color:#f92672">(</span>id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;login-passwd&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> WebElement passwordField<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@FindBy</span><span style="color:#f92672">(</span>id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;login-signin&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> WebElement nextButton<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@FindBy</span><span style="color:#f92672">(</span>id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;persistent&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> WebElement sessionCheckBox<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Constructor
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">YahooLogin</span><span style="color:#f92672">(</span>WebDriver driver<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">driver</span> <span style="color:#f92672">=</span> driver
+</span></span><span style="display:flex;"><span>      PageFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">initElements</span><span style="color:#f92672">(</span>driver<span style="color:#f92672">,</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Toggles the &#39;Stay Signed in&#39; checkbox
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">clickCheckBox</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">sessionCheckBox</span><span style="color:#f92672">.</span><span style="color:#a6e22e">click</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Enter the username in the Username field, then proceed to 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * click the next button to be presented with the password 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * filed. Finally, enter the password in the password field 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * and click next.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * @return YahooHome The Page object for Yahoo Home page.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> YahooHome <span style="color:#a6e22e">login</span><span style="color:#f92672">(</span>String username<span style="color:#f92672">,</span> String password<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Enter username
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">usernameField</span><span style="color:#f92672">.</span><span style="color:#a6e22e">sendKeys</span><span style="color:#f92672">(</span>username<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">nextButton</span><span style="color:#f92672">.</span><span style="color:#a6e22e">click</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Enter password
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">passwordField</span><span style="color:#f92672">.</span><span style="color:#a6e22e">sendKeys</span><span style="color:#f92672">(</span>password<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">clickNextButton</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> YahooHome<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">driver</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span></code></pre></div><blockquote>
+<p>Notice on the <code>login()</code> method how a new page object class is being returned as a successful login on the Yahoo login page presents you with an authenticated Yahoo Home page.</p>
+</blockquote>
+<h2 id="example-test-with-pom-pattern-in-use">Example Test <em>with</em> POM pattern in use</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * Test Login Feature
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Login</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testLogin</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      YahooLogin yahooLogin <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> YahooLogin<span style="color:#f92672">(</span>driver<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>      YahooHome yahooHome <span style="color:#f92672">=</span> yahooLogin<span style="color:#f92672">.</span><span style="color:#a6e22e">login</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Pravin&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>      assertThat<span style="color:#f92672">(</span>yahooHome<span style="color:#f92672">.</span><span style="color:#a6e22e">getUser</span><span style="color:#f92672">(),</span> is<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Pravin&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>As can be seen there is significant code reduction, and if the web page were to experience any UI changes, all modifications will only need to be made within the page object class and not the test cases themselves.</p>
+<h2 id="see-it-in-action">See it in action</h2>
+<blockquote>
+<p>If you&rsquo;re interested in seeing more of this Design pattern in action within a real project, check out my <a href="https://github.com/modothprav/Automated-Portfolio-Tracking">Automated portfolio tracking</a> project on GitHub.</p>
+</blockquote>
+<p>This Java Selenium project scrapes transaction data from Sharesies the New Zealand investing platform and enters that scraped data within a user&rsquo;s portfolio in Yahoo Finance. In this project, selenium is used more for automation purposes rather than its typical use in testing.</p>
+</div>
+      </section>
+      <footer>
+  <p>&copy; 2022 </p>
+</footer>
+    </main>
+  </body>
+</html>
