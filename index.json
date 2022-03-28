@@ -9,11 +9,11 @@
   
   
     {
-      "id": "https://blog.pravinmodotholi.me/2022/03/28/page-object-model-with-selenium/",
+      "id": "https://blog.pravinmodotholi.me/2022/03/27/page-object-model-with-selenium/",
       "title": "Page Object Model with Selenium",
       "content_text": "The Page Object Model is a design pattern that is encouraged to be used during automation testing with Selenium. This design pattern creates an object repository of the web elements present on a web page. A Page object is represented as an Object-oriented class, which can contain methods that allow tests and other automation workflows to interact with the user interface of the web page.\nAdvantages One main benefit of using this design pattern is the ease of maintenance and flexibility for future changes.",
-      "url": "https://blog.pravinmodotholi.me/2022/03/28/page-object-model-with-selenium/",
-      "date_published": "2022-03-28 00:00:00 +0000 UTC",
+      "url": "https://blog.pravinmodotholi.me/2022/03/27/page-object-model-with-selenium/",
+      "date_published": "2022-03-27 00:00:00 +0000 UTC",
       "tags": ["programming,selenium,java"]
     }
   
