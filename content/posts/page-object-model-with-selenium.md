@@ -1,6 +1,6 @@
 ---
 title: Page Object Model with Selenium
-date: 2022-03-28
+date: 2022-03-27
 tags: ["programming", "selenium", "java"]
 ---
 
