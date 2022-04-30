@@ -2,25 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.pravinmodotholi.me/2022/04/27/automatically-contribute-leetcode-solutions-to-github/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pravinmodotholi.me/tags/github/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pravinmodotholi.me/posts/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pravinmodotholi.me/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pravinmodotholi.me/tags/programming/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pravinmodotholi.me/tags/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pravinmodotholi.me/tags/tools/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.pravinmodotholi.me/tags/java/</loc>
     <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.pravinmodotholi.me/2022/03/27/page-object-model-with-selenium/</loc>
     <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.pravinmodotholi.me/posts/</loc>
-    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.pravinmodotholi.me/</loc>
-    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.pravinmodotholi.me/tags/programming/</loc>
-    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://blog.pravinmodotholi.me/tags/selenium/</loc>
-    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.pravinmodotholi.me/tags/</loc>
     <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.pravinmodotholi.me/tags/finance/</loc>
