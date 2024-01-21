@@ -1,55 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Pravin&#39;s Blog</title>
-    <link>https://blog.pravinmodotholi.live/</link>
-    <description>Recent content on Pravin&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>pravinmanoj44@gmail.com (Pravin Modotholi)</managingEditor>
-    <webMaster>pravinmanoj44@gmail.com (Pravin Modotholi)</webMaster>
-    <copyright>2022 Pravin Modotholi All rights reserved</copyright>
-    <lastBuildDate>Wed, 27 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.pravinmodotholi.live/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Automatically Contribute Leetcode Solutions to Github</title>
-      <link>https://blog.pravinmodotholi.live/2022/04/27/automatically-contribute-leetcode-solutions-to-github/</link>
-      <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
-      <author>pravinmanoj44@gmail.com (Pravin Modotholi)</author>
-      <guid>https://blog.pravinmodotholi.live/2022/04/27/automatically-contribute-leetcode-solutions-to-github/</guid>
-      <description>If you are a fresh graduate or entry-level Software developer/engineer, you have most likely already heard or been told to practice coding problems to prepare for technical interviews. You would have also heard that employers would like to see your personal projects and contributions to open source hosting platforms such as Github.
-I had been told the same thing when I started breaking into the industry and quickly realised that I couldn&amp;rsquo;t do both at the same time.</description>
-    </item>
-    
-    <item>
-      <title>Page Object Model with Selenium</title>
-      <link>https://blog.pravinmodotholi.live/2022/03/27/page-object-model-with-selenium/</link>
-      <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
-      <author>pravinmanoj44@gmail.com (Pravin Modotholi)</author>
-      <guid>https://blog.pravinmodotholi.live/2022/03/27/page-object-model-with-selenium/</guid>
-      <description>The Page Object Model is a design pattern that is encouraged to be used during automation testing with Selenium. This design pattern creates an object repository of the web elements present on a web page. A Page object is represented as an Object-oriented class, which can contain methods that allow tests and other automation workflows to interact with the user interface of the web page.
-Advantages One main benefit of using this design pattern is the ease of maintenance and flexibility for future changes.</description>
-    </item>
-    
-    <item>
-      <title>Optimising Interest Earned on Savings for Tertiary Students</title>
-      <link>https://blog.pravinmodotholi.live/2022/03/07/optimising-interest-earned-on-savings-for-tertiary-students/</link>
-      <pubDate>Mon, 07 Mar 2022 00:00:00 +0000</pubDate>
-      <author>pravinmanoj44@gmail.com (Pravin Modotholi)</author>
-      <guid>https://blog.pravinmodotholi.live/2022/03/07/optimising-interest-earned-on-savings-for-tertiary-students/</guid>
-      <description>Being a Tertiary student in New Zealand can happen to be more expensive than it should be. While studying unable to work full time can have you living pay-check to pay-check as time goes by.
-However, there are a lot of resources, benefits and perks out there for tertiary students that can be taken advantage of while you are studying. From those available perks, this post will be discussing student bank accounts, and how you can use them to earn the best interest rate available on your savings.</description>
-    </item>
-    
-    <item>
-      <title>How to Move files among different repos and Retain Git History</title>
-      <link>https://blog.pravinmodotholi.live/2022/02/26/how-to-move-files-among-different-repos-and-retain-git-history/</link>
-      <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
-      <author>pravinmanoj44@gmail.com (Pravin Modotholi)</author>
-      <guid>https://blog.pravinmodotholi.live/2022/02/26/how-to-move-files-among-different-repos-and-retain-git-history/</guid>
-      <description>When working in a multi-repository or large mono-repo project, eventually developers will have to refactor out some files and folders across from one project to another.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pravin's Blog</title><link>https://blog.pravinmodotholi.live/</link><description>Recent content on Pravin's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>pravinmanoj44@gmail.com (Pravin Modotholi)</managingEditor><webMaster>pravinmanoj44@gmail.com (Pravin Modotholi)</webMaster><copyright>2022 Pravin Modotholi All rights reserved</copyright><lastBuildDate>Wed, 27 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.pravinmodotholi.live/index.xml" rel="self" type="application/rss+xml"/><item><title>Automatically Contribute Leetcode Solutions to Github</title><link>https://blog.pravinmodotholi.live/2022/04/27/automatically-contribute-leetcode-solutions-to-github/</link><pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate><author>pravinmanoj44@gmail.com (Pravin Modotholi)</author><guid>https://blog.pravinmodotholi.live/2022/04/27/automatically-contribute-leetcode-solutions-to-github/</guid><description>If you are a fresh graduate or entry-level Software developer/engineer, you have most likely already heard or been told to practice coding problems to prepare for technical interviews. You would have also heard that employers would like to see your personal projects and contributions to open source hosting platforms such as Github.
+I had been told the same thing when I started breaking into the industry and quickly realised that I couldn&amp;rsquo;t do both at the same time.</description></item><item><title>Page Object Model with Selenium</title><link>https://blog.pravinmodotholi.live/2022/03/27/page-object-model-with-selenium/</link><pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate><author>pravinmanoj44@gmail.com (Pravin Modotholi)</author><guid>https://blog.pravinmodotholi.live/2022/03/27/page-object-model-with-selenium/</guid><description>The Page Object Model is a design pattern that is encouraged to be used during automation testing with Selenium. This design pattern creates an object repository of the web elements present on a web page. A Page object is represented as an Object-oriented class, which can contain methods that allow tests and other automation workflows to interact with the user interface of the web page.
+Advantages One main benefit of using this design pattern is the ease of maintenance and flexibility for future changes.</description></item><item><title>How to Move files among different repos and Retain Git History</title><link>https://blog.pravinmodotholi.live/2022/02/26/how-to-move-files-among-different-repos-and-retain-git-history/</link><pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate><author>pravinmanoj44@gmail.com (Pravin Modotholi)</author><guid>https://blog.pravinmodotholi.live/2022/02/26/how-to-move-files-among-different-repos-and-retain-git-history/</guid><description>When working in a multi-repository or large mono-repo project, eventually developers will have to refactor out some files and folders across from one project to another.
 As developers reach a point where they have to start splitting up the large repository into smaller sub-repos, preserving the commit history during this migration process can be very handy for future bugs and adjustments.
-As you may have already noticed, when simply trying to move files from one repo to another we lose any history correlated to that file and are unable to trace back any changes.</description>
-    </item>
-    
-  </channel>
-</rss>
+As you may have already noticed, when simply trying to move files from one repo to another we lose any history correlated to that file and are unable to trace back any changes.</description></item></channel></rss>
