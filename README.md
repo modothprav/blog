@@ -1,5 +1,5 @@
 # About
-This Repo Contains my personal blog at [blog.pravinmodotholi.live](https://blog.pravinmodotholi.live/) built using the static site generator [Hugo](https://gohugo.io/).
+This Repo Contains my personal blog at [blog.pravinmodotholi.tech](https://blog.pravinmodotholi.tech/) built using the static site generator [Hugo](https://gohugo.io/).
 
 I decided to document what I had learned through my professional and personal experiences in the hopes of providing value to people and helping them in their own learning journey. I also figured this project will aid me towards retaining more information, so I wouldn't forget what I had learned as easily. Hence I decided to create a blog website where I can share my perspective on the things I have learned over time.
 
